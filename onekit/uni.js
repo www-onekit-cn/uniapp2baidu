@@ -120,7 +120,6 @@ export default class uni {
   }
   //////////////////////////////websocket///////////////////////////////////////
   static connectSocket(object) {
-    // ////////未完成///////////请把method放到header///////////////////////////
     return swan.connectSocket(object)
   }
   static onSocketError(object) {
