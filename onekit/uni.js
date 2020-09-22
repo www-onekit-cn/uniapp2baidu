@@ -1086,7 +1086,8 @@ static createInterstitialAd(object){
 }
 ////////////////////////////////
 static requestSubscribeMessage(object){
-  return requestSubscribeMessage(object)
+  // return requestSubscribeMessage(object)
+  console.alert("本平台不支持requestSubscribeMessage")
 }
 //////////////////////////////////////////
   static setNavigationBarTitle(object) {
@@ -1171,6 +1172,22 @@ static createVideoContext(videoId,ui) {
     return swan.createIntersectionObserver(object)
   }
   ///////////////////////////
+ static getSubNVueById(subNvueId){
+  
+}
+static getCurrentSubNVue(){
+
+}
+static requireNativePlugin(PluginName){
+
+}
+
+static report( eventName , options){//统计
+  return swan.reportAnalytics(eventName,options)
+}
+static getProvider(object){
+  console.alert("本平台不支持getProvider")
+}
 
   ///////////////////////////////////
   static createARCameraContext(object) {
@@ -1188,15 +1205,4 @@ function ai_init(api) {
   }
 }
 
-function getSubNVueById(subNvueId){
-  
-}
-function getCurrentSubNVue(){
 
-}
-function requireNativePlugin(PluginName){
-  
-}
-static getProvider(object){
-  console.alert("本平台不支持getProvider")
-}
