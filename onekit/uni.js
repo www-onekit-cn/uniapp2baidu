@@ -143,48 +143,48 @@ export default class uni {
 
  ////////////////////////////////mDNS////////////////////////////////////////////
   static stopLocalServiceDiscovery(object) {
-    // return my.stopLocalServiceDiscovery(object);
+    // return swan.stopLocalServiceDiscovery(object);
     console.alert("百度不支持");
   }
   static startLocalServiceDiscovery(object) {
-    // return my.startLocalServiceDiscovery(object);
+    // return swan.startLocalServiceDiscovery(object);
     console.alert("百度不支持");
   }
   static onLocalServiceResolveFail(callback) {
-    // return my.onLocalServiceResolveFail(callback);
+    // return swan.onLocalServiceResolveFail(callback);
     console.alert("百度不支持");
   }
   static onLocalServiceLost(callback) {
-    // return my.onLocalServiceLost(callback);
+    // return swan.onLocalServiceLost(callback);
     console.alert("百度不支持");
   }
   static onLocalServiceFound(callback) {
-    // return my.onLocalServiceFound(callback);
+    // return swan.onLocalServiceFound(callback);
     console.alert("百度不支持");
   }
   static onLocalServiceDiscoveryStop(callback) {
-    // return my.onLocalServiceDiscoveryStop(callback);
+    // return swan.onLocalServiceDiscoveryStop(callback);
     console.alert("百度不支持");
   }
   static offLocalServiceResolveFail(callback) {
-    // return my.offLocalServiceResolveFail(callback);
+    // return swan.offLocalServiceResolveFail(callback);
     console.alert("百度不支持");
   }
   static offLocalServiceLost(callback) {
-    // return my.offLocalServiceLost(callback);
+    // return swan.offLocalServiceLost(callback);
     console.alert("百度不支持");
   }
   static offLocalServiceFound(callback) {
-    // return my.offLocalServiceFound(callback);
+    // return swan.offLocalServiceFound(callback);
     console.alert("百度不支持");
   }
   static offLocalServiceDiscoveryStop(callback) {
-    // return my.offLocalServiceDiscoveryStop(callback);
+    // return swan.offLocalServiceDiscoveryStop(callback);
     console.alert("百度不支持");
   }
   ///////////////////////////UDP通信////////////////////////////////////////
   static createUDPSocket(){
-    // return my.createUDPSocket();
+    // return swan.createUDPSocket();
     console.alert("百度不支持");
   }
   ///////// Open Interface ///////////////////////////////////////////////
@@ -513,6 +513,13 @@ export default class uni {
   static getShareInfo(object) {
     return swan.getShareInfo(object)
   }
+  static share(object){
+    console.alert("本平台不支持")
+  }
+  static shareWithSystem(object){
+        console.alert("本平台不支持")
+
+  }
   ////////数据缓存/////// Storage //////////////
   static setStorage(object) {
     return swan.setStorage(object)
@@ -805,90 +812,137 @@ static startBeaconDiscovery(object) {
 }
 //////////////Wi-Fi/////////////
 static stopWifi(object) {
-  return swan.stopWifi(object);
+  // return swan.stopWifi(object);
+  console.alert("百度暂不支持stopWifi")
 }
 static startWifi(object) {
-  return swan.startWifi(object);
+  // return swan.startWifi(object);
+    console.alert("百度暂不支持startWifi")
+
 }
 static setWifiList(object) {
-  return swan.setWifiList(object);
+  // return swan.setWifiList(object);
+    console.alert("百度暂不支持setWifiList")
+
 }
 static onWifiConnected(object) {
-  return swan.onWifiConnected(object);
+  // return swan.onWifiConnected(object);
+    console.alert("百度暂不支持onWifiConnected")
+
 }
 static onGetWifiList(object) {
-  return swan.onGetWifiList(object);
+  // return swan.onGetWifiList(object);
+    console.alert("百度暂不支持onGetWifiList")
+
 }
 static offWifiConnected(callback){
-  return swan.offWifiConnected(callback)
+  // return swan.offWifiConnected(callback)
+    console.alert("百度暂不支持offWifiConnected")
+
 }
 static offGetWifiList(callback){
-  return swan.offGetWifiList(callback)
+  // return swan.offGetWifiList(callback)
+    console.alert("百度暂不支持offGetWifiList")
+
 }
 static getWifiList(object) {
-  return swan.getWifiList(object);
+  // return swan.getWifiList(object);
+    console.alert("百度暂不支持getWifiList")
+
 }
 static getConnectedWifi(object) {
-  return swan.getConnectedWifi(object);
+  // return swan.getConnectedWifi(object);
+    console.alert("百度暂不支持getConnectedWifi")
+
 }
 static connectWifi(object) {
-  return swan.connectWifi(object);
+  // return swan.connectWifi(object);
+    console.alert("百度暂不支持connectWifi")
+
 }
 /////////////////电量/////////////////
 static getBatteryInfoSync(object) {
-  return swan.getBatteryInfoSync(object);
-}
-static getBatteryInfo(result) {
-  return swan.getBatteryInfo(object);
+  return my.getBatteryInfoSync(object);
 }
 static getBatteryInfo(object) {
-  return swan.getBatteryInfo(object);
+  return my.getBatteryInfo(object);
+}
+static getBatteryInfo(object) {
+  return my.getBatteryInfo(object);
 }
 /////////////////////NFC/////////
  static stopHCE(object) {
-  return swan.stopHCE(object);
+  // return swan.stopHCE(object);
+      console.alert("百度暂不支持stopHCE")
+
 }
 static startHCE(object) {
-  return swan.startHCE(object);
+  // return swan.startHCE(object);
+        console.alert("百度暂不支持startHCE")
+
 }
 static sendHCEMessage(object) {
-  return swan.sendHCEMessage(object);
+  // return swan.sendHCEMessage(object);
+        console.alert("百度暂不支持sendHCEMessage")
+
 }
 static onHCEMessage(object) {
-  return swan.onHCEMessage(object);
+  // return swan.onHCEMessage(object);
+        console.alert("百度暂不支持onHCEMessage")
+
 }
 static offHCEMessage(callback){
-return swan.offHCEMessage(callback)
+// return swan.offHCEMessage(callback)
+      console.alert("百度暂不支持offHCEMessage")
+
 }
 static getNFCAdapter(){
-  return swan.getNFCAdapter()
+  // return swan.getNFCAdapter()
+        console.alert("百度暂不支持getNFCAdapter")
+
 }
 static getHCEState(object) {
-  return swan.getHCEState(object);
+  // return swan.getHCEState(object);
+        console.alert("百度暂不支持getHCEState")
+
 }
-///////////////////////////
+//////////////////设备方向/////////
 
 static onDeviceMotionChange(object) {
-  return swan.onDeviceMotionChange(object);
+  // return swan.onDeviceMotionChange(object);
+          console.alert("百度暂不支持onDeviceMotionChange")
+
 }
 static stopDeviceMotionListening(object) {
-  return swan.stopDeviceMotionListening(object);
+  // return swan.stopDeviceMotionListening(object);
+            console.alert("百度暂不支持stopDeviceMotionListening")
+
 }
 static startDeviceMotionListening(object) {
-  return swan.startDeviceMotionListening(object);
+  // return swan.startDeviceMotionListening(object);
+            console.alert("百度暂不支持startDeviceMotionListening")
+
 }
 static offDeviceMotionChange(callback) {
-  return swan.offDeviceMotionChange(callback);
+  // return swan.offDeviceMotionChange(callback);
+            console.alert("百度暂不支持offDeviceMotionChange")
+
 }
 ////////生物认证////////
 static startSoterAuthentication(object) {
-  return swan.startSoterAuthentication(object)
+  // return swan.startSoterAuthentication(object)
+   console.alert("百度暂不支持startSoterAuthentication")
+
 }
 static checkIsSupportSoterAuthentication(object) {
-  return swan.checkIsSupportSoterAuthentication(object)
+  // return swan.checkIsSupportSoterAuthentication(object)
+     console.alert("百度暂不支持checkIsSupportSoterAuthentication")
+
 }
 static checkIsSoterEnrolledInDevice(object) {
-  return swan.checkIsSoterEnrolledInDevice(object)
+  // return swan.checkIsSoterEnrolledInDevice(object)
+     console.alert("百度暂不支持checkIsSoterEnrolledInDevice")
+
 }
   ////////////// Worker ///////////////
   static createWorker(path) {
@@ -964,6 +1018,9 @@ static hideTabBarRedDot(object) {
 static showTabBarRedDot(object) {
   return swan.showTabBarRedDot(object)
 }
+static onTabBarMidButtonTap(CALLBACK){
+  console.alert("本平台暂不支持onTabBarMidButtonTap")
+}
 ///////////////////////////////////////////////
 static setBackgroundTextStyle(object) {
     return swan.setBackgroundTextStyle(object)
@@ -1002,7 +1059,8 @@ static startPullDownRefresh(object) {
 }
 //////////////////////////////////////////
 static createOffscreenCanvas() {
-  return swan.createOffscreenCanvas();
+  // return swan.createOffscreenCanvas();
+  console.alert("本平台不支持createOffscreenCanvas")
 }
 static createContext() {
   return new Context();
@@ -1128,4 +1186,17 @@ function ai_init(api) {
  uni.ai[api] = (object) => {
     return uni_ai.run(api, object);
   }
+}
+
+function getSubNVueById(subNvueId){
+  
+}
+function getCurrentSubNVue(){
+
+}
+function requireNativePlugin(PluginName){
+  
+}
+static getProvider(object){
+  console.alert("本平台不支持getProvider")
 }
