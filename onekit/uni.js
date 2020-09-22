@@ -732,83 +732,134 @@ static vibrateShort(object) {
 static addPhoneContact(object) {
   return swan.addPhoneContact(object);
 }
-///////蓝牙//////
+///////蓝牙/暂不支持/////
 static stopBluetoothDevicesDiscovery(object) { 
-   return swan.stopBluetoothDevicesDiscovery(object);
+  //  return swan.stopBluetoothDevicesDiscovery(object);
+      console.alert("暂不支持stopBluetoothDevicesDiscovery")
+
   }
 static startBluetoothDevicesDiscovery(object) {
-  return swan.startBluetoothDevicesDiscovery(object);
+  // return swan.startBluetoothDevicesDiscovery(object);
+        console.alert("暂不支持startBluetoothDevicesDiscovery")
+
 }
 static openBluetoothAdapter(object) { 
-   return swan.openBluetoothAdapter(object); }
+  //  return swan.openBluetoothAdapter(object); 
+        console.alert("暂不支持openBluetoothAdapter")
+
+}
 static onBluetoothDeviceFound(object) {
-  return swan.onBluetoothDeviceFound(object);
+  // return swan.onBluetoothDeviceFound(object);
+        console.alert("暂不支持onBluetoothDeviceFound")
+
 }
 static onBluetoothAdapterStateChange(object) {
-  return swan.onBluetoothAdapterStateChange(object);
+  // return swan.onBluetoothAdapterStateChange(object);
+        console.alert("暂不支持onBluetoothAdapterStateChange")
+
 }
 static getConnectedBluetoothDevices(object) {
-  return swan.getConnectedBluetoothDevices(object);
+  // return swan.getConnectedBluetoothDevices(object);
+        console.alert("暂不支持getConnectedBluetoothDevices")
+
 }
 static getBluetoothDevices(object) {
-  return swan.getBluetoothDevices(object);
+  // return swan.getBluetoothDevices(object);
+        console.alert("暂不支持getBluetoothDevices")
+
 }
 static getBluetoothAdapterState(object) {
-  return swan.getBluetoothAdapterState(object);
+  // return swan.getBluetoothAdapterState(object);
+        console.alert("暂不支持getBluetoothAdapterState")
+
 }
 static closeBluetoothAdapter(object) {
-  return swan.closeBluetoothAdapter(object);
+  // return swan.closeBluetoothAdapter(object);
+        console.alert("暂不支持closeBluetoothAdapter")
+
 }
 ////低功耗蓝牙/////
 static setBLEMTU(object){
-  return swan.setBLEMTU(object)
+  // return swan.setBLEMTU(object)
+        console.alert("暂不支持setBLEMTU")
+
 }
 static writeBLECharacteristicValue(object){
-  return swan.writeBLECharacteristicValue(object)
+  // return swan.writeBLECharacteristicValue(object)
+        console.alert("暂不支持writeBLECharacteristicValue")
+
 }
 static readBLECharacteristicValue(object){
-  return swan.readBLECharacteristicValue(object)
+  //return swan.readBLECharacteristicValue(object)
+        console.alert("暂不支持readBLECharacteristicValue")
+
 }
 static onBLEConnectionStateChange(object){
-  return swan.onBLEConnectionStateChange(object)
+//  return swan.onBLEConnectionStateChange(object)
+      console.alert("暂不支持onBLEConnectionStateChange")
+
 }
 static onBLECharacteristicValueChange(object){
-  return swan.onBLECharacteristicValueChange(object)
+ // return swan.onBLECharacteristicValueChange(object)
+       console.alert("暂不支持onBLECharacteristicValueChange")
+
 }
 static notifyBLECharacteristicValueChange(object){
-  return swan.notifyBLECharacteristicValueChange(object)
+ // return swan.notifyBLECharacteristicValueChange(object)
+       console.alert("暂不支持notifyBLECharacteristicValueChange")
+
 }
 static getBLEDeviceServices(object){
-  return swan.getBLEDeviceServices(object)
+ // return swan.getBLEDeviceServices(object)
+       console.alert("暂不支持getBLEDeviceServices")
+
 }
 static getBLEDeviceRSSI(object){
-  return swan.getBLEDeviceRSSI(object)
+//  return swan.getBLEDeviceRSSI(object)
+      console.alert("暂不支持getBLEDeviceRSSI")
+
 }
 static getBLEDeviceCharacteristics(object){
-  return swan.getBLEDeviceCharacteristics(object)
+//  return swan.getBLEDeviceCharacteristics(object)
+      console.alert("暂不支持getBLEDeviceCharacteristics")
+
 }
 static createBLEConnection(object){
-  return swan.createBLEConnection(object)
+ // return swan.createBLEConnection(object)
+       console.alert("暂不支持createBLEConnection")
+
 }
 static closeBLEConnection(object){
-  return swan.closeBLEConnection(object)
+ // return swan.closeBLEConnection(object)
+       console.alert("暂不支持closeBLEConnection")
+
 }
 
  ////////////// iBeacon //////////////////
  static onBeaconServiceChange(object) {
-  return swan.onBeaconServiceChange(object);
+ // return swan.onBeaconServiceChange(object);
+       console.alert("暂不支持onBeaconServiceChange")
+
 }
 static onBeaconUpdate(object) {
-  return swan.onBeaconUpdate(object);
+ // return swan.onBeaconUpdate(object);
+       console.alert("暂不支持onBeaconUpdate")
+
 }
 static getBeacons(object) {
-  return swan.getBeacons(object);
+ // return swan.getBeacons(object);
+       console.alert("暂不支持getBeacons")
+
 }
 static stopBeaconDiscovery(object) {
-  return swan.stopBeaconDiscovery(object);
+ // return swan.stopBeaconDiscovery(object);
+       console.alert("暂不支持stopBeaconDiscovery")
+
 }
 static startBeaconDiscovery(object) {
-  return swan.startBeaconDiscovery(object);
+//  return swan.startBeaconDiscovery(object);
+      console.alert("暂不支持startBeaconDiscovery")
+
 }
 //////////////Wi-Fi/////////////
 static stopWifi(object) {
@@ -1089,6 +1140,9 @@ static requestSubscribeMessage(object){
   // return requestSubscribeMessage(object)
   console.alert("本平台不支持requestSubscribeMessage")
 }
+static preloadPage(object){
+   console.alert("本平台不支持")
+ }
 //////////////////////////////////////////
   static setNavigationBarTitle(object) {
     return swan.setNavigationBarTitle(object);
