@@ -88,20 +88,141 @@ export default class uni {
   }
   //////////////////// File //////////
   static getFileSystemManager(object) {
-    return swan.getFileSystemManager(object)
+    // return swan.getFileSystemManager(object)
+    console.alert("百度暂不支持getFileSystemManager")
   }
-  static getFileInfo(object) {
-    return swan.getFileInfo(object)
+  static getFileInfo(uni_object) {
+  if(!uni_object){
+    return}   
+var uni_filePath=uni_object.filePath
+var uni_digestAlgorithm=uni_object.digestAlgorithm
+var uni_success=uni_object.success
+var uni_fail=uni_object.fail
+var uni_complete=uni_object.complete
+var swan_object={}
+if(uni_filePath){
+    swan.object.filePath=uni_filePath}
+    if(uni_digestAlgorithm){
+     swan.object.digestAlgorithm=uni_digestAlgorithm
+    }
+if(uni_success){
+    swan.object.success=uni_success}
+    if(uni_fail){
+    swan.object.fail=uni_fail}
+    if(uni_complete){
+    swan.object.complete=uni_complete}
+
+swan_object.success = function (swan_res) {
+        var uni_res = {
+          size: swan_res.size,
+        //   errMsg: swan_res.errMsg,//uniapp有baidu没有,需编程
+                  digest: swan_res.digest//微信的
+
+        };
+        if (uni_object.success) {
+          uni_object.success(uni_res);
+        }
+        if (uni_object.complete) {
+          uni_object.complete(uni_res);
+        }
+      };
+      swan_object.fail = function (swan_res) {
+        if (uni_object.fail) {
+          uni_object.fail(uni_res);
+        }
+        if (uni_object.complete) {
+          uni_object.complete(uni_res);
+        }
+      };
+    
+    return getFileInfo(swan_object);
   }
   static removeSavedFile(object) {
     return swan.removeSavedFile(object)
   }
-  static getSavedFileInfo(object) {
-    return swan.getSavedFileInfo(object)
+  static getSavedFileInfo(uni_object) {
+    if(!uni_object){
+    return}   
+var uni_filePath=uni_object.filePath
+var uni_success=uni_object.success
+var uni_fail=uni_object.fail
+var uni_complete=uni_object.complete
+var swan_object={}
+if(uni_filePath){
+    swan.object.filePath=uni_filePath}
+if(uni_success){
+    swan.object.success=uni_success}
+    if(uni_fail){
+    swan.object.fail=uni_fail}
+    if(uni_complete){
+    swan.object.complete=uni_complete}
+
+swan_object.success = function (swan_res) {
+        var uni_res = {
+          size: swan_res.size,
+        //   errMsg: swan_res.errMsg,//uniapp有baidu没有,需编程
+                  createTime: swan_res.createTime
+
+        };
+        if (uni_object.success) {
+          uni_object.success(uni_res);
+        }
+        if (uni_object.complete) {
+          uni_object.complete(uni_res);
+        }
+      };
+      swan_object.fail = function (swan_res) {
+        if (uni_object.fail) {
+          uni_object.fail(uni_res);
+        }
+        if (uni_object.complete) {
+          uni_object.complete(uni_res);
+        }
+      };
+    
+    return getSavedFileList(swan_object);
   }
-  static getSavedFileList(object) {
-    return swan.getSavedFileList(object)
+  //
+static getSavedFileList(uni_object) {
+    if(!uni_object){
+    return}   
+var uni_success=uni_object.success
+var uni_fail=uni_object.fail
+var uni_complete=uni_object.complete
+var swan_object={}
+if(uni_success){
+    swan.object.success=uni_success}
+    if(uni_fail){
+    swan.object.fail=uni_fail}
+    if(uni_complete){
+    swan.object.complete=uni_complete}
+
+swan_object.success = function (swan_res) {
+        var uni_res = {
+          fileList: swan_res.fileList
+        //   errMsg: swan_res.errMsg,//uniapp有baidu没有,需编程
+         
+
+        };
+        if (uni_object.success) {
+          uni_object.success(uni_res);
+        }
+        if (uni_object.complete) {
+          uni_object.complete(uni_res);
+        }
+      };
+      swan_object.fail = function (swan_res) {
+        if (uni_object.fail) {
+          uni_object.fail(uni_res);
+        }
+        if (uni_object.complete) {
+          uni_object.complete(uni_res);
+        }
+      };
+    
+    return getSavedFileList(swan_object);
   }
+  //
   static openDocument(object) {
     return swan.openDocument(object)
   }
@@ -109,8 +230,64 @@ export default class uni {
     return swan.saveFile(object);
   } 
   //////////////// Network ///////////////
-  static request(object) {
-    return swan.request(object);
+  static request(uni_object) {
+        if(!uni_object){return}
+var uni_url=uni_object.url
+var uni_data=uni_object.data
+var uni_header=uni_object.header
+var uni_method=uni_object.method||"GET"
+var uni_timeout=uni_object.timeout||30000
+var uni_dataType=uni_object.dataType||"json"
+var uni_responseType=uni_object.responseType||"text"
+var uni_success=uni_object.success
+var uni_fail=uni_object.fail
+var uni_complete=uni_object.complete
+var swan_object={}
+if(uni_url){
+swan_object.url=uni_url}
+if(uni_data){
+swan_object.data=uni_data}
+if(uni_header){
+swan_object.header=uni_header}
+if(uni_method){
+swan_object.uni_method=uni_method}
+if(uni_timeout){
+swan_object.timeout=uni_timeout}
+if(uni_dataType){
+swan_object.dataType=uni_dataType}
+if(uni_responseType){
+swan_object.responseType=uni_responseType}
+if(uni_success){
+swan_object.success=uni_success}
+if(uni_fail){
+swan_object.fail=uni_fail}
+if(uni_complete){
+swan_object.complete=uni_complete}
+
+swan_object.success = function (swan_res) {
+        var uni_res = {
+          data: swan_res.data,
+          statusCode: swan_res.statusCode,
+          header: swan_res.header,
+        //   cookies:swan_res.cookies//uniapp有baidu没有，需编程
+
+        };
+        if (uni_object.success) {
+          uni_object.success(uni_res);
+        }
+        if (uni_object.complete) {
+          uni_object.complete(uni_res);
+        }
+      };
+      swan_object.fail = function (swan_res) {
+        if (uni_object.fail) {
+          uni_object.fail(uni_res);
+        }
+        if (uni_object.complete) {
+          uni_object.complete(uni_res);
+        }
+      };
+    return request(swan_object)
   }
   static downloadFile(object) {
     return swan.downloadFile(object)
@@ -210,7 +387,7 @@ export default class uni {
       }
     }
   }
-  static login = function(object) {
+  static login = function(object) {//
     var that = this;
     if (!object) {
       return swan.login(object);
@@ -363,7 +540,7 @@ export default class uni {
        uni.getUserInfo({
           success(res) {
             var url = getApp().onekitswan.server + "userinfo";
-            my.httpRequest({
+            swan.httpRequest({
               url: url,
               header: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -484,7 +661,7 @@ export default class uni {
     });
   };
   ////////// Router ///////////////////////////////////////////
-  static navigateTo(object) {
+  static navigateTo(object) {///events参数未完成
     return swan.navigateTo(object);
   }
   static redirectTo(object) {
@@ -582,7 +759,8 @@ static saveImageToPhotosAlbum(object) {
   return swan.compressImage(object)
 }
 static chooseMessageFile(object){
-  return swan.chooseMessageFile(object)
+//   return swan.chooseMessageFile(object)
+console.alert("百度暂不支持chooseMessageFile")
 }
                     /////////////////////////////录音/////////////////////////////////////////
 static getRecorderManager(object) {
@@ -602,19 +780,29 @@ static chooseVideo(object) {
   return swan.chooseVideo(object)
 }
 static chooseMedia(object) {
-  return swan.chooseMedia(object)
+//   return swan.chooseMedia(object)
+console.alert("百度暂不支持chooseMedia")
+
+
 }
 static saveVideoToPhotosAlbum(object) {
   return swan.saveVideoToPhotosAlbum(object)
 }
 static getVideoInfo(object){
-  return swan.getVideoInfo(object)
+//   return swan.getVideoInfo(object)
+console.alert("百度暂不支持getVideoInfo")
+
+
 }
 static compressVideo(object){
-  return swan.compressVideo(object)
+//   return swan.compressVideo(object)
+  console.alert("百度暂不支持compressVideo")
+
 }
 static openVideoEditor(object){
-  return swan.openVideoEditor(object)
+//   return swan.openVideoEditor(object)
+  console.alert("百度暂不支持openVideoEditor")
+
 }
                     ////////////////////////视频，相机，直播组件控制///////////////////////////////
 static createVideoContext(object) {
@@ -627,10 +815,15 @@ static createLivePlayerContext(playerId,ui) {
   return new LivePlayerContext(swan.createLivePlayerContext(playerId));
 }
 static createLivePusherContext(object) {
-  return swan.createLivePusherContext(object)
+//   return swan.createLivePusherContext(object)
+  console.alert("百度暂不支持createLivePusherContext")
+
+
 }
 static createMediaContainer(){
-  return swan.createMediaContainer()
+//   return swan.createMediaContainer()
+  console.alert("百度暂不支持createMediaContainer")
+
 }
 /////////////////////////系统信息//////////////////////////////
 static getSystemInfo(object) {
@@ -680,21 +873,63 @@ static startCompass(object) {
 }
 //////////////////////陀螺仪////////////////////
 static onGyroscopeChange(object) {
-  return swan.onGyroscopeChange(object);
+//   return swan.onGyroscopeChange(object);
+  console.alert("百度暂不支持onGyroscopeChange")
+
 }
 static stopGyroscope(object) {
-  return swan.stopGyroscope(object);
+//   return swan.stopGyroscope(object);
+  console.alert("百度暂不支持stopGyroscope")
+
 }
 static startGyroscope(object) {
-  return swan.startGyroscope(object);
+//   return swan.startGyroscope(object);
+  console.alert("百度暂不支持startGyroscope")
+
 }
 //////////////////////电话////////////////////
 static makePhoneCall = function(object) {
   return swan.makePhoneCall(object);
 }
 //
-static scanCode = function(object) {
-  return swan.scanCode(object);
+static scanCode = function(uni_object) {
+if(!uni_object){
+return}
+var uni_onlyFromCamera=uni_object.onlyFromCamera
+var uni_scanType=uni_object.scanType
+var uni_success=uni_object.success
+var uni_fail=uni_object.fail
+var uni_complete=uni_object.complete
+var swan_object={}
+if(uni_onlyFromCamera){
+swan_object.onlyFromCamera=uni_onlyFromCamera}
+if(uni_scanType){
+swan_object.scanType=uni_scanType}
+swan_object.success = function (swan_res) {
+        var uni_res = {
+          result: swan_res.result,
+          scanType: swan_res.scanType,
+          charSet: swan_res.charSet,
+        //   path:swan_res.path uniapp有百度没有，需要编程
+
+        };
+        if (uni_object.success) {
+          uni_object.success(uni_res);
+        }
+        if (uni_object.complete) {
+          uni_object.complete(uni_res);
+        }
+      };
+      swan_object.fail = function (swan_res) {
+        if (uni_object.fail) {
+          uni_object.fail(uni_res);
+        }
+        if (uni_object.complete) {
+          uni_object.complete(uni_res);
+        }
+      };
+    
+    return scanCode(swan_object);
 }
 //
 static getClipboardData(object) {
@@ -913,14 +1148,12 @@ static connectWifi(object) {
 }
 /////////////////电量/////////////////
 static getBatteryInfoSync(object) {
-  return my.getBatteryInfoSync(object);
+  return swan.getBatteryInfoSync(object);
 }
 static getBatteryInfo(object) {
-  return my.getBatteryInfo(object);
+  return swan.getBatteryInfo(object);
 }
-static getBatteryInfo(object) {
-  return my.getBatteryInfo(object);
-}
+
 /////////////////////NFC/////////
  static stopHCE(object) {
   // return swan.stopHCE(object);
@@ -1001,10 +1234,14 @@ static checkIsSoterEnrolledInDevice(object) {
   }
   /////////////////键盘////////////////////
   static hideKeyboard(object) {
-    return swan.hideKeyboard(object)
+    // return swan.hideKeyboard(object)
+         console.alert("百度暂不支持hideKeyboard")
+
   }
   static onKeyboardHeightChange(callback){
-    return swan.onKeyboardHeightChange(callback)
+    // return swan.onKeyboardHeightChange(callback)
+         console.alert("百度暂不支持onKeyboardHeightChange")
+
   }
 //////////////////////设备完////////////////////
 
@@ -1042,7 +1279,9 @@ static checkIsSoterEnrolledInDevice(object) {
     return swan.showNavigationBarLoading(object)
   }
   static hideHomeButton(object){
-    return swan.hideHomeButton(object)
+    // return swan.hideHomeButton(object)
+             console.alert("百度暂不支持hideHomeButton")
+
   }
 ///////////////////////////////////
 static setTabBarItem(object) {
@@ -1089,14 +1328,21 @@ static pageScrollTo(object) {
 }
 //////////////////窗口////////////////////////
 static offWindowResize(object) {
-  return swan.offWindowResize(object)
+//   return swan.offWindowResize(object)
+  console.alert("本平台暂不支持offWindowResize")
+
 }
 static onWindowResize(object) {
-  return swan.onWindowResize(object)
+//   return swan.onWindowResize(object)
+  console.alert("本平台暂不支持onWindowResize")
+
 }
 /////////////////字体/////////////////////////
 static loadFontFace(object) {
-  return swan.loadFontFace(object)
+//   return swan.loadFontFace(object)
+  console.alert("本平台暂不支持loadFontFace")
+
+
 }
 /////////////////下拉/////////////////////////
 static PullDownRefresh() {
@@ -1130,10 +1376,14 @@ static canvasGetImageData(object) {
 };
 ////////////////////////广告//////////////////
 static createRewardedVideoAd(object){
-  return swan.createRewardedVideoAd(object)
+//   return swan.createRewardedVideoAd(object)
+  console.alert("本平台不支持createRewardedVideoAd")
+
 }
 static createInterstitialAd(object){
-  return swan.createInterstitialAd(object)
+//   return swan.createInterstitialAd(object)
+  console.alert("本平台不支持createInterstitialAd")
+
 }
 ////////////////////////////////
 static requestSubscribeMessage(object){
@@ -1222,8 +1472,46 @@ static createVideoContext(videoId,ui) {
   static createSelectorQuery(object) {
     return swan.createSelectorQuery(object)
   }
-  static createIntersectionObserver(object) {
-    return swan.createIntersectionObserver(object)
+  static createIntersectionObserver(uni_object) {
+  if(!uni_object){return}
+var uni_thresholds=uni_object.thresholds
+var uni_initialRatio=uni_object.initialRatio
+var uni_observeAll=uni_object.observeAll
+var uni_success=uni_object.success
+var uni_fail=uni_object.fail
+var uni_complete=uni_object.complete
+var swan_object={}
+    if(uni_thresholds){
+    swan.object.thresholds=uni_thresholds}
+    if(uni_initialRatio){
+    swan.object.initialRatio=uni_initialRatio}
+    if(uni_observeAll){
+    swan.object.selectAll=uni_observeAll}
+    if(uni_success){
+    swan.object.success=uni_success}
+    if(uni_fail){
+    swan.object.fail=uni_fail}
+    if(uni_complete){
+    swan.object.complete=uni_complete}
+    swan_object.success = function (swan_res) {
+        var uni_res = {
+        };
+        if (uni_object.success) {
+          uni_object.success(uni_res);
+        }
+        if (uni_object.complete) {
+          uni_object.complete(uni_res);
+        }
+      };
+      swan_object.fail = function (swan_res) {
+        if (uni_object.fail) {
+          uni_object.fail(uni_res);
+        }
+        if (uni_object.complete) {
+          uni_object.complete(uni_res);
+        }
+      };
+        return createIntersectionObserver(swan_object)
   }
   ///////////////////////////
  static getSubNVueById(subNvueId){
