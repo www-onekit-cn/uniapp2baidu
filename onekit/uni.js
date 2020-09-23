@@ -586,13 +586,60 @@ swan_object.success = function (swan_res) {
       }
     });
   }
-  static navigateToMiniProgram(object) {
-    return swan.navigateToMiniProgram(object)
+  static navigateToMiniProgram(uni_object) {
+    if(!uni_object){
+return}
+var uni_appId=uni_object.appId
+var uni_path=uni_object.path
+var uni_extraData=uni_object.extraData
+var uni_envVersion=uni_object.envVersion
+var uni_success=uni_object.success
+var uni_fail=uni_object.fail
+var uni_complete=uni_object.complete
+var swan_object={}
+
+if(uni_appId){
+swan_object.appKey=uni_appId}
+if(uni_path){
+swan_object.path=uni_path}
+if(uni_extraData){
+swan_object.extraData=uni_extraData}
+if(uni_envVersion){
+swan_object.envVersion=uni_envVersion}
+if(uni_success){
+    swan.object.success=uni_success}
+if(uni_fail){
+    swan.object.fail=uni_fail}
+if(uni_complete){
+    swan.object.complete=uni_complete}
+
+swan_object.success = function (swan_res) {
+        var uni_res = {
+         
+
+        };
+        if (uni_object.success) {
+          uni_object.success(uni_res);
+        }
+        if (uni_object.complete) {
+          uni_object.complete(uni_res);
+        }
+      };
+      swan_object.fail = function (swan_res) {
+        if (uni_object.fail) {
+          uni_object.fail(uni_res);
+        }
+        if (uni_object.complete) {
+          uni_object.complete(uni_res);
+        }
+      };
+    
+    return navigateToSmartProgram(swan_object);
   }
   static navigateBackMiniProgram(object) {
-    return swan.navigateBackMiniProgram(object)
+    return swan.navigateBackSmartProgram(object)
   }
-  static getAccountInfoSync(object) {
+  static getAccountInfoSync(object) {//百度没找到未完成
     return swan.getAccountInfoSync(object)
   }
 
@@ -602,8 +649,8 @@ swan_object.success = function (swan_res) {
   static reportAnalytics(object, eventName) {
     return swan.reportAnalytics(object, eventName)
   }
-  static requestPayment(object) {
-    return swan.requestPayment(object);
+  static requestPayment(object) {//支付参数不一致,未完成
+    // return swan.requestPayment(object);
   }
   static authorize(object) {
     return swan.authorize(object)
@@ -618,7 +665,8 @@ swan_object.success = function (swan_res) {
     return swan.chooseAddress(object)
   }
   static openCard(object) {
-    return swan.openCard(object);
+    // return swan.openCard(object);
+    console.alert("百度暂不支持openCard卡券")
   }
   static chooseInvoiceTitle(object) {
     return swan.chooseInvoiceTitle(object)
@@ -631,8 +679,9 @@ swan_object.success = function (swan_res) {
     return swan.chooseInvoice(object)
   }
 
-  static getWeRunData(object) {
-    return swan.getWeRunData(object)
+  static getWeRunData(object) {//微信的计步器,百度不支持
+    // return swan.getWeRunData(object)
+    console.alert("百度暂不支持getWeRunData")
   }
   static reportMonitor(name, value) {
     var js_code = getApp().onekit.jscode;
@@ -681,8 +730,8 @@ swan_object.success = function (swan_res) {
   static updateShareMenu(object) {
     return swan.updateShareMenu(object)
   }
-  static showShareMenu(object) {
-    return swan.showShareMenu(object);
+  static showShareMenu(object) {//baidu的是openShare,
+    // return swan.showShareMenu(object);
   }
   static hideShareMenu(object) {
     return swan.hideShareMenu(object)
